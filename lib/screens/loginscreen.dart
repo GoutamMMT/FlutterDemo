@@ -55,14 +55,18 @@ class _LoginscreenState extends State<LoginScreen> {
     final emailAddress = _emailController.text;
     final password = _passwordController.text;
     if (emailAddress.isNotEmpty && password.isNotEmpty) {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => Homescreen(
-          userProfileUrl: AppConstant.DEFAULT_USER_PROFILEPIC,
-          username: 'Test User',
-          userEmail: emailAddress,
-          signInType: 'Normal',
-        ),
-      ));
+      try {
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) => Homescreen(
+            userProfileUrl: AppConstant.DEFAULT_USER_PROFILEPIC,
+            username: 'Test User',
+            userEmail: emailAddress,
+            signInType: 'Normal',
+          ),
+        ));
+      } catch (e) {
+        print('$e');
+      }
     } else {
       ScaffoldMessenger.of(context).showSnackBar(ShowSnackMessage.fromMessage(
           'Email and password are required field', 'GOT IT', () {}));
@@ -229,7 +233,7 @@ class _LoginscreenState extends State<LoginScreen> {
                       hintText: 'Enter password',
                       labelText: 'Enter password',
                       startIcon: Icon(
-                        Icons.lock,
+                        Icons.password,
                         size: 17.0,
                       ),
                       keyboardType: TextInputType.text,
@@ -241,7 +245,7 @@ class _LoginscreenState extends State<LoginScreen> {
               height: 10,
             ),
             CustomElevatedButton(
-              buttonLabel: 'LoginIn',
+              buttonLabel: 'Login In',
               buttonWidth: 130,
               buttonHeight: 40,
               btnBackgroundColor: '#006596',

@@ -43,6 +43,12 @@ class _CommonInputfieldState extends State<CommonInputfield> {
       inputFormatters: [
         LengthLimitingTextInputFormatter(widget.fieldMaxLength),
       ],
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return getErrorMessage();
+        }
+        return null;
+      },
       obscuringCharacter: widget.obsecureCharacter!,
       style: TextStyle(
         color: Colors.black,
@@ -78,5 +84,9 @@ class _CommonInputfieldState extends State<CommonInputfield> {
         ),
       ),
     );
+  }
+
+  String getErrorMessage() {
+    return 'generic error';
   }
 }
