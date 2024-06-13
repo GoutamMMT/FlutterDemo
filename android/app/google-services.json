@@ -1,0 +1,142 @@
+{
+  "project_info": {
+    "project_number": "259621204399",
+    "project_id": "demoapp-41b06",
+    "storage_bucket": "demoapp-41b06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259621204399:android:5806a3bf81b033e870bf5a",
+        "android_client_info": {
+          "package_name": "com.example.socialgooglesignin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259621204399-m743urovjuvoi74b09idd5o64u9rv2jj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.socialgooglesignin",
+            "certificate_hash": "cc8c07c9655defafd76b5e6c4081412692d51e0e"
+          }
+        },
+        {
+          "client_id": "259621204399-4kcpu0vgm3gq1nsr4a4orcn6gnu4ho50.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzRCRF6tnxERM8VmlO70gmwKZA99_64oY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259621204399-4kcpu0vgm3gq1nsr4a4orcn6gnu4ho50.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "259621204399-j8dmhgt0qiqk05f6h6l7k5cphrk3av63.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.magicminds.DemoApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259621204399:android:db71f8bb990cfd7c70bf5a",
+        "android_client_info": {
+          "package_name": "com.example.sociallogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259621204399-948vj2q2gv6m46rmp3b6e5dld1gl7iee.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sociallogin",
+            "certificate_hash": "cc8c07c9655defafd76b5e6c4081412692d51e0e"
+          }
+        },
+        {
+          "client_id": "259621204399-4kcpu0vgm3gq1nsr4a4orcn6gnu4ho50.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzRCRF6tnxERM8VmlO70gmwKZA99_64oY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259621204399-4kcpu0vgm3gq1nsr4a4orcn6gnu4ho50.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "259621204399-j8dmhgt0qiqk05f6h6l7k5cphrk3av63.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.magicminds.DemoApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259621204399:android:c61646a7d44126f070bf5a",
+        "android_client_info": {
+          "package_name": "com.mmt.demo.demogenericapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259621204399-e0k39uar0kflhq08dgqaptcn3g763kap.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mmt.demo.demogenericapp",
+            "certificate_hash": "cc8c07c9655defafd76b5e6c4081412692d51e0e"
+          }
+        },
+        {
+          "client_id": "259621204399-4kcpu0vgm3gq1nsr4a4orcn6gnu4ho50.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzRCRF6tnxERM8VmlO70gmwKZA99_64oY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259621204399-4kcpu0vgm3gq1nsr4a4orcn6gnu4ho50.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "259621204399-j8dmhgt0qiqk05f6h6l7k5cphrk3av63.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.magicminds.DemoApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
