@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:socialgooglesignin/env/env.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -50,7 +51,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAzRCRF6tnxERM8VmlO70gmwKZA99_64oY',
+    apiKey: Env.AndroidFirebaseAPIKEY,
     appId: '1:259621204399:android:db71f8bb990cfd7c70bf5a',
     messagingSenderId: '259621204399',
     projectId: 'demoapp-41b06',
@@ -58,13 +59,15 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC1S1mUR8vVtHs1gBb6CCThMq9N3vOaCG8',
+    apiKey: Env.IOSFirebaseAPIKEY,
     appId: '1:259621204399:ios:f114226fdbf780ea70bf5a',
     messagingSenderId: '259621204399',
     projectId: 'demoapp-41b06',
     storageBucket: 'demoapp-41b06.appspot.com',
-    androidClientId: '259621204399-e0k39uar0kflhq08dgqaptcn3g763kap.apps.googleusercontent.com',
-    iosClientId: '259621204399-sho7eb50t56h1ntfconlq22bcj9s0eho.apps.googleusercontent.com',
+    androidClientId:
+        '259621204399-e0k39uar0kflhq08dgqaptcn3g763kap.apps.googleusercontent.com',
+    iosClientId:
+        '259621204399-sho7eb50t56h1ntfconlq22bcj9s0eho.apps.googleusercontent.com',
     iosBundleId: 'com.example.socialgooglesignin',
   );
 }

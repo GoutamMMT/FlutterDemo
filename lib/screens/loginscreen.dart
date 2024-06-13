@@ -7,8 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:socialgooglesignin/screens/homescreen.dart';
+import 'package:socialgooglesignin/screens/signupscreen.dart';
 import 'package:socialgooglesignin/utils/commonbutton.dart';
 import 'package:socialgooglesignin/utils/commoninputfield.dart';
+import 'package:socialgooglesignin/utils/constants.dart';
 import 'package:socialgooglesignin/utils/extensions.dart';
 import 'package:socialgooglesignin/utils/signin_controller.dart';
 import 'package:socialgooglesignin/utils/webp_image_loader.dart';
@@ -52,8 +54,19 @@ class _LoginscreenState extends State<LoginScreen> {
   void _onLoginButtonClicked() {
     final emailAddress = _emailController.text;
     final password = _passwordController.text;
-    ScaffoldMessenger.of(context).showSnackBar(ShowSnackMessage.fromMessage(
-        'email is $emailAddress >> password is $password', 'OK', () {}));
+    if (emailAddress.isNotEmpty && password.isNotEmpty) {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) => Homescreen(
+          userProfileUrl: AppConstant.DEFAULT_USER_PROFILEPIC,
+          username: 'Test User',
+          userEmail: emailAddress,
+          signInType: 'Normal',
+        ),
+      ));
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(ShowSnackMessage.fromMessage(
+          'Email and password are required field', 'GOT IT', () {}));
+    }
   }
 
   void _onFacebookSignInButtonClick() async {
@@ -154,13 +167,22 @@ class _LoginscreenState extends State<LoginScreen> {
     }
   }
 
+  void gotoSignUpScreen() {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => UserSignUpScreen(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: HexColor.fromHex('#006596'),
-        systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Colors.white),
+        systemOverlayStyle:
+            SystemUiOverlayStyle(statusBarColor: HexColor.fromHex('#8CFFFFFF')),
         title: Text('Login Screen',
             style: TextStyle(color: Colors.white, fontSize: 18.0)),
       ),
@@ -268,7 +290,48 @@ class _LoginscreenState extends State<LoginScreen> {
                 buttonHeight: 45,
                 btnBackgroundColor: '#3b5998',
                 btnTextColor: '#FFFFFF',
-                onButtonPressed: _onFacebookSignInButtonClick)
+                onButtonPressed: _onFacebookSignInButtonClick),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              height: 50,
+              margin: EdgeInsets.all(5),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      gotoSignUpScreen;
+                    },
+                    child: RichText(
+                      text: TextSpan(
+                        style: TextStyle(
+                          fontSize: 17.0,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: 'Doesn\u0027t having account?',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 15.0),
+                          ),
+                          TextSpan(
+                            text: ' SignUp',
+                            style: TextStyle(
+                                color: HexColor.fromHex('#006596'),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15.0),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

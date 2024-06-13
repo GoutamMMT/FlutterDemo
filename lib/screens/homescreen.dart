@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:socialgooglesignin/screens/loginscreen.dart';
 import 'package:socialgooglesignin/utils/circularimage.dart';
 import 'package:socialgooglesignin/utils/commonbutton.dart';
 import 'package:socialgooglesignin/utils/extensions.dart';
@@ -12,16 +13,20 @@ class Homescreen extends StatelessWidget {
   const Homescreen(
       {this.userProfileUrl, this.username, this.userEmail, this.signInType});
 
-  void _onLogoutButtonClicked() {
-    print('sign in provider type is $signInType');
-  }
-
   @override
   Widget build(BuildContext context) {
+    void onLogoutButtonClicked() {
+      print('sign in provider type is $signInType');
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => LoginScreen()),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: HexColor.fromHex('#006596'),
-        systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Colors.white),
+        systemOverlayStyle:
+            SystemUiOverlayStyle(statusBarColor: HexColor.fromHex('#8CFFFFFF')),
         title: Text('Home Screen',
             style: TextStyle(color: Colors.white, fontSize: 18.0)),
       ),
@@ -65,7 +70,7 @@ class Homescreen extends StatelessWidget {
               btnTextColor: '#FFFFFF',
               buttonHeight: 40.0,
               buttonWidth: 125,
-              onButtonPressed: _onLogoutButtonClicked,
+              onButtonPressed: onLogoutButtonClicked,
             ),
           ],
         ),
