@@ -17,9 +17,13 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: HexColor.fromHex('#006596'),
+        leading: BackButton(
+          color: Colors.white,
+        ),
+        titleSpacing: 0,
         systemOverlayStyle:
             SystemUiOverlayStyle(statusBarColor: HexColor.fromHex('#8CFFFFFF')),
-        title: Text('Login Screen',
+        title: Text('User Signup',
             style: TextStyle(color: Colors.white, fontSize: 18.0)),
       ),
       body: SingleChildScrollView(

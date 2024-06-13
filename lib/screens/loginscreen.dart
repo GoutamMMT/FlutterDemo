@@ -168,7 +168,9 @@ class _LoginscreenState extends State<LoginScreen> {
   }
 
   void gotoSignUpScreen() {
-    Navigator.of(context).pushReplacement(
+    print('on sign up link click');
+    Navigator.push(
+      context,
       MaterialPageRoute(
         builder: (context) => UserSignUpScreen(),
       ),
@@ -239,7 +241,7 @@ class _LoginscreenState extends State<LoginScreen> {
               height: 10,
             ),
             CustomElevatedButton(
-              buttonLabel: 'SignIn',
+              buttonLabel: 'LoginIn',
               buttonWidth: 130,
               buttonHeight: 40,
               btnBackgroundColor: '#006596',
@@ -303,7 +305,7 @@ class _LoginscreenState extends State<LoginScreen> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      gotoSignUpScreen;
+                      gotoSignUpScreen();
                     },
                     child: RichText(
                       text: TextSpan(
